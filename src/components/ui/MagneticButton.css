@@ -1,0 +1,32 @@
+﻿.magnetic-button-root {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(18, 139, 166, 0.15);
+  border: 1px solid #128BA6;
+  color: #F4ECE7;
+  padding: 0.85rem 1.8rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.82rem;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  user-select: none;
+}
+
+.magnetic-button-root:hover {
+  background: #128BA6;
+  border-color: #4BF2F2;
+  box-shadow: 0 0 20px rgba(75, 242, 242, 0.25);
+  color: #F4ECE7;
+}
+
+.magnetic-button-content {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  pointer-events: none;
+}

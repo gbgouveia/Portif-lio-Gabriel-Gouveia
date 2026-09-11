@@ -1,0 +1,73 @@
+﻿.behind-code-section {
+  background-color: var(--black-soft);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.behind-code-header {
+  max-width: 800px;
+  margin-bottom: var(--space-lg);
+}
+
+.behind-code-title {
+  font-size: clamp(2.5rem, 5.5vw, 5rem);
+  color: var(--white);
+  margin-bottom: var(--space-xs);
+  line-height: 1.05;
+}
+
+.behind-code-lead {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  color: var(--blue-light);
+  margin-bottom: 1rem;
+}
+
+.behind-code-text {
+  font-size: 1.05rem;
+  color: var(--gray-300);
+  line-height: 1.7;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.pillar-card {
+  background-color: var(--black);
+  border: 1px solid var(--border-subtle);
+  padding: 2rem;
+  border-radius: 4px;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.pillar-card:hover {
+  border-color: var(--blue);
+  transform: translateY(-4px);
+}
+
+.pillar-card-id {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--blue);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.pillar-card-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.pillar-card-desc {
+  font-size: 0.95rem;
+  color: var(--gray-300);
+  line-height: 1.5;
+}

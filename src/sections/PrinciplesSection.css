@@ -1,0 +1,52 @@
+﻿.principles-section {
+  background-color: var(--black);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.principles-header {
+  margin-bottom: var(--space-lg);
+}
+
+.principles-title {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  color: var(--blue-light);
+  line-height: 1.05;
+}
+
+.principles-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 3.5vw, 3rem);
+}
+
+.principle-item {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 1.5rem;
+}
+
+.principle-num {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.principle-statement {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 4vw, 3.8rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .principle-item {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

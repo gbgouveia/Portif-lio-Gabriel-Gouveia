@@ -1,0 +1,60 @@
+﻿.logo-marquee-root {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: rgba(18, 139, 166, 0.05);
+  border-top: 1px solid rgba(244, 236, 231, 0.08);
+  border-bottom: 1px solid rgba(244, 236, 231, 0.08);
+  padding: 1.25rem 0;
+  user-select: none;
+}
+
+.marquee-fade-left {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  background: linear-gradient(90deg, #201D1E 0%, transparent 100%);
+  z-index: 5;
+  pointer-events: none;
+}
+
+.marquee-fade-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100px;
+  background: linear-gradient(270deg, #201D1E 0%, transparent 100%);
+  z-index: 5;
+  pointer-events: none;
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  width: fit-content;
+  white-space: nowrap;
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.25rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  color: #F4ECE7;
+  transition: color 0.3s ease;
+}
+
+.marquee-item:hover {
+  color: #4BF2F2;
+}
+
+.marquee-dot {
+  color: #128BA6;
+  font-size: 0.75rem;
+}

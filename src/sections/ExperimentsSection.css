@@ -1,0 +1,117 @@
+﻿.experiments-section {
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.experiments-header {
+  margin-bottom: var(--space-lg);
+}
+
+.experiments-title {
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+  line-height: 1.05;
+}
+
+.experiments-subtitle {
+  font-size: 1.1rem;
+  color: var(--accent-warm);
+  font-family: var(--font-mono);
+  margin-bottom: var(--space-md);
+}
+
+.experiments-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filter-btn {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  background-color: var(--bg-primary);
+  padding: 0.4rem 0.85rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+}
+
+.filter-btn.is-active {
+  color: var(--bg-primary);
+  background-color: var(--text-primary);
+  border-color: var(--text-primary);
+}
+
+.experiments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.experiment-card {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  padding: 1.5rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 240px;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.experiment-card:hover {
+  border-color: var(--accent-warm);
+  transform: translateY(-4px);
+}
+
+.exp-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.exp-id {
+  color: var(--accent-warm);
+}
+
+.exp-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.exp-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+.exp-tech {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: flex;
+  gap: 0.5rem;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 0.75rem;
+}
+
+.exp-tech-val {
+  color: var(--text-primary);
+}

@@ -1,0 +1,72 @@
+﻿:root {
+  /* Master Brand Palette */
+  --bg-dark: #201D1E;
+  --text-cream: #F4ECE7;
+  --brand-blue: #128BA6;
+  --cyan-vivid: #4BF2F2;
+  --terracotta: #733729;
+
+  /* Legacy compatibility aliases mapped to new palette */
+  --black: #201D1E;
+  --black-soft: #181516;
+  --blue-deep: #128BA6;
+  --blue: #128BA6;
+  --blue-light: #4BF2F2;
+  --white: #F4ECE7;
+  --white-pure: #FFFFFF;
+  --gray-100: #F4ECE7;
+  --gray-300: rgba(244, 236, 231, 0.7);
+  --gray-600: rgba(244, 236, 231, 0.4);
+
+  --bg-primary: var(--bg-dark);
+  --bg-secondary: #181516;
+  --bg-tertiary: #272324;
+  --bg-card: rgba(244, 236, 231, 0.03);
+  --bg-card-hover: rgba(18, 139, 166, 0.1);
+
+  --text-primary: var(--text-cream);
+  --text-secondary: rgba(244, 236, 231, 0.75);
+  --text-muted: rgba(244, 236, 231, 0.45);
+  --text-inverse: #201D1E;
+
+  --border-subtle: rgba(244, 236, 231, 0.12);
+  --border-strong: rgba(18, 139, 166, 0.4);
+  --border-active: var(--cyan-vivid);
+
+  --accent-warm: var(--brand-blue);
+  --accent-glow: rgba(75, 242, 242, 0.25);
+
+  /* Typography — Rubik as single primary font system */
+  --font-hero: 'Rubik', -apple-system, sans-serif;
+  --font-display: 'Rubik', -apple-system, sans-serif;
+  --font-body: 'Rubik', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 7rem;
+  --space-2xl: 11rem;
+
+  /* Layout */
+  --max-width: 1400px;
+  --max-width-narrow: 1000px;
+  --gutter: 2rem;
+
+  /* Transitions */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-smooth: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 0.25s;
+  --duration-normal: 0.45s;
+  --duration-slow: 0.8s;
+
+  /* Z-Indices */
+  --z-canvas: 1;
+  --z-content: 10;
+  --z-nav: 100;
+  --z-overlay: 200;
+  --z-modal: 500;
+  --z-cursor: 999;
+}

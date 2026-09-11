@@ -1,0 +1,131 @@
+﻿.photography-section {
+  background-color: var(--black);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.photography-header {
+  max-width: 860px;
+  margin-bottom: var(--space-lg);
+}
+
+.photography-title {
+  font-size: clamp(2.5rem, 5.5vw, 5rem);
+  color: var(--white);
+  line-height: 1.05;
+  margin-bottom: var(--space-xs);
+}
+
+.photography-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  color: var(--blue-light);
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-card {
+  background-color: var(--black-soft);
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.gallery-card:hover {
+  border-color: var(--blue);
+  transform: translateY(-4px);
+}
+
+.gallery-img-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+}
+
+.gallery-card-meta {
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.g-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.g-cat {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--gray-300);
+}
+
+/* Lightbox Modal */
+.photo-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(5, 6, 8, 0.92);
+  backdrop-filter: blur(12px);
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.photo-modal-card {
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+  background-color: var(--black-soft);
+  border: 1px solid var(--border-strong);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.photo-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--black);
+  border: 1px solid var(--border-subtle);
+  color: var(--white);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 1.1rem;
+}
+
+.photo-modal-view {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+}
+
+.photo-modal-info {
+  padding: 1.5rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.photo-modal-info h3 {
+  font-size: 1.4rem;
+  color: var(--white);
+}
+
+.photo-modal-info p {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--blue-light);
+}

@@ -1,0 +1,116 @@
+﻿.process-section {
+  position: relative;
+  width: 100%;
+  padding: 8rem 2rem;
+  background-color: #201D1E;
+  color: #F4ECE7;
+  border-top: 1px solid rgba(244, 236, 231, 0.08);
+}
+
+.process-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.process-header {
+  margin-bottom: 4rem;
+}
+
+.process-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: #128BA6;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.process-tag-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #4BF2F2;
+}
+
+.process-title {
+  font-family: 'Rubik', sans-serif;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #F4ECE7;
+  margin-bottom: 1.25rem;
+}
+
+.process-subtitle {
+  font-size: 1.125rem;
+  color: rgba(244, 236, 231, 0.65);
+  max-width: 650px;
+  line-height: 1.6;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+}
+
+.process-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(244, 236, 231, 0.08);
+  border-radius: 6px;
+  padding: 2.25rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.process-card:hover {
+  background: rgba(18, 139, 166, 0.06);
+  border-color: rgba(18, 139, 166, 0.4);
+  transform: translateY(-6px);
+}
+
+.process-number {
+  font-family: 'Rubik', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #128BA6;
+  margin-bottom: 1.25rem;
+  line-height: 1;
+}
+
+.process-step-title {
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #F4ECE7;
+  margin-bottom: 1rem;
+}
+
+.process-description {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: rgba(244, 236, 231, 0.75);
+}
+
+@media (max-width: 1200px) {
+  .process-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-section {
+    padding: 5rem 1.25rem;
+  }
+}

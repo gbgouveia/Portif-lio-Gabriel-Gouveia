@@ -1,0 +1,78 @@
+﻿.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  will-change: transform;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--text-primary);
+  border-radius: 50%;
+  position: absolute;
+  transition: transform 0.2s var(--ease-out-expo), background-color 0.2s ease;
+}
+
+.cursor-ring {
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(244, 244, 245, 0.4);
+  border-radius: 50%;
+  position: absolute;
+  transition: transform 0.3s var(--ease-out-expo), border-color 0.3s ease, width 0.3s ease, height 0.3s ease;
+}
+
+.cursor-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--bg-primary);
+  font-weight: 700;
+  position: absolute;
+  pointer-events: none;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* Cursor States */
+.state-hover .cursor-ring {
+  transform: scale(1.4);
+  border-color: var(--text-primary);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.state-hover .cursor-dot {
+  transform: scale(0.5);
+}
+
+.state-view .cursor-ring,
+.state-open .cursor-ring,
+.state-drag .cursor-ring,
+.state-explore .cursor-ring {
+  width: 64px;
+  height: 64px;
+  background-color: var(--text-primary);
+  border-color: var(--text-primary);
+}
+
+.state-view .cursor-dot,
+.state-open .cursor-dot,
+.state-drag .cursor-dot,
+.state-explore .cursor-dot {
+  opacity: 0;
+}
+
+.state-view .cursor-label,
+.state-open .cursor-label,
+.state-drag .cursor-label,
+.state-explore .cursor-label {
+  opacity: 1;
+}

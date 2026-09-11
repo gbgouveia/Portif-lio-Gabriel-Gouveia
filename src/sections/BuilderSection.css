@@ -1,0 +1,30 @@
+﻿.builder-section {
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.builder-content {
+  max-width: 960px;
+  margin-top: var(--space-md);
+}
+
+.builder-title {
+  font-size: clamp(3rem, 8vw, 7.5rem);
+  font-weight: 800;
+  color: var(--accent-warm);
+  line-height: 0.95;
+  margin-bottom: var(--space-md);
+}
+
+.builder-quote-block {
+  border-left: 2px solid var(--border-strong);
+  padding-left: clamp(1.5rem, 4vw, 3rem);
+}
+
+.builder-statement {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.8vw, 2.5rem);
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.35;
+}

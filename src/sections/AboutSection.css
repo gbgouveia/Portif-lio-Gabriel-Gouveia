@@ -1,0 +1,109 @@
+﻿.about-editorial-section {
+  position: relative;
+  width: 100%;
+  padding: 7rem 0;
+  background-color: #201D1E;
+  color: #F4ECE7;
+  border-top: 1px solid rgba(244, 236, 231, 0.08);
+}
+
+.about-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: #128BA6;
+  margin-bottom: 3rem;
+}
+
+.tag-line {
+  width: 24px;
+  height: 2px;
+  background-color: #128BA6;
+}
+
+.about-editorial-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.about-title {
+  font-family: var(--font-hero, 'Rubik', sans-serif);
+  font-size: clamp(2.5rem, 4.5vw, 4.8rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: #F4ECE7;
+  display: flex;
+  flex-direction: column;
+}
+
+.title-sub {
+  color: #128BA6;
+  font-size: 0.65em;
+  margin-top: 0.4rem;
+}
+
+.about-body-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-lead {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: clamp(1.1rem, 1.4vw, 1.3rem);
+  line-height: 1.6;
+  color: #F4ECE7;
+  font-weight: 400;
+}
+
+.about-text {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 1rem;
+  line-height: 1.75;
+  color: rgba(244, 236, 231, 0.75);
+  font-weight: 300;
+}
+
+.about-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(244, 236, 231, 0.08);
+}
+
+.stat-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.stat-num {
+  font-family: var(--font-hero, 'Rubik', sans-serif);
+  font-size: 1.8rem;
+  color: #4BF2F2;
+}
+
+.stat-label {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  color: rgba(244, 236, 231, 0.6);
+}
+
+@media (max-width: 960px) {
+  .about-editorial-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .about-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

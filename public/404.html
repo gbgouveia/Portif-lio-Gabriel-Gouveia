@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 — Gabriel Gouveia</title>
+    <style>
+      :root {
+        --bg-primary: #09090b;
+        --text-primary: #f4f4f5;
+        --text-secondary: #a1a1aa;
+        --accent-warm: #e4c498;
+        --border-subtle: rgba(255, 255, 255, 0.08);
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: 'Outfit', -apple-system, sans-serif;
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+      }
+      .nf-card {
+        max-width: 640px;
+        width: 100%;
+        border: 1px solid var(--border-subtle);
+        padding: 3rem 2.5rem;
+        border-radius: 4px;
+        background-color: rgba(255, 255, 255, 0.02);
+      }
+      .nf-code {
+        font-family: 'Space Grotesk', monospace;
+        font-size: 0.85rem;
+        letter-spacing: 0.2em;
+        color: var(--accent-warm);
+        display: block;
+        margin-bottom: 1rem;
+      }
+      .nf-title {
+        font-family: 'Syne', sans-serif;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 800;
+        line-height: 1.1;
+        margin-bottom: 1rem;
+      }
+      .nf-desc {
+        color: var(--text-secondary);
+        font-size: 1.05rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+      }
+      .nf-btn {
+        display: inline-block;
+        font-family: 'Space Grotesk', monospace;
+        font-size: 0.85rem;
+        letter-spacing: 0.15em;
+        color: var(--bg-primary);
+        background-color: var(--accent-warm);
+        padding: 0.85rem 1.75rem;
+        border-radius: 2px;
+        text-decoration: none;
+        font-weight: 700;
+      }
+      .nf-btn:hover { opacity: 0.9; }
+    </style>
+  </head>
+  <body>
+    <div class="nf-card">
+      <span class="nf-code">404 // STATIC ROUTE</span>
+      <h1 class="nf-title">THIS PAGE WASN'T BUILT YET.</h1>
+      <p class="nf-desc">
+        The requested path does not exist on this static server.
+      </p>
+      <a href="/" id="home-link" class="nf-btn">RETURN TO HOMEPAGE →</a>
+    </div>
+    <script>
+      // Single Page Application routing fix for GitHub Pages
+      (function() {
+        var homeLink = document.getElementById('home-link');
+        var basePath = window.location.pathname.split('/')[1];
+        if (basePath && basePath !== 'work') {
+          homeLink.href = '/' + basePath + '/';
+        }
+      })();
+    </script>
+  </body>
+</html>

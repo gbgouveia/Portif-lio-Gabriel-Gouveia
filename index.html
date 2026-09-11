@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Security Headers & Content Security Policy (CSP) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https:; media-src 'self' blob: data: https:; connect-src 'self' ws: wss: http: https:; frame-ancestors 'none'; object-src 'none'; base-uri 'self';" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    
+    <title>Gabriel Gouveia — Desenvolvimento, Tecnologia e Experiência</title>
+    <meta name="description" content="Eu transformo ideias em experiências digitais. Desenvolvimento de sistemas, tecnologia e direção visual por Gabriel Gouveia." />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://gabrielgouveia.dev/" />
+    <meta property="og:title" content="Gabriel Gouveia — Desenvolvedor & Criativo" />
+    <meta property="og:description" content="Eu transformo ideias em experiências digitais." />
+    <meta property="og:image" content="https://gabrielgouveia.dev/og-cover.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Gabriel Gouveia — Desenvolvedor & Criativo" />
+    <meta property="twitter:description" content="Eu transformo ideias em experiências digitais." />
+
+    <!-- Google Fonts — Rubik (primary) + JetBrains Mono (code/mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Gabriel Gouveia",
+      "jobTitle": "Desenvolvedor & Criativo",
+      "url": "https://gabrielgouveia.dev",
+      "sameAs": [
+        "https://github.com/gabrielgouveia",
+        "https://linkedin.com/in/gabrielgouveia"
+      ],
+      "knowsAbout": [
+        "Desenvolvimento de Sistemas",
+        "React",
+        "Python",
+        "Django",
+        "Three.js",
+        "GSAP",
+        "Fotografia",
+        "Direção Visual"
+      ],
+      "description": "Eu transformo ideias em experiências digitais."
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

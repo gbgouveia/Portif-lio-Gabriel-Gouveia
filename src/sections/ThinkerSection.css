@@ -1,0 +1,123 @@
+﻿.thinker-section {
+  background-color: var(--black);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.thinker-header {
+  max-width: 860px;
+  margin-bottom: var(--space-lg);
+}
+
+.thinker-title {
+  font-size: clamp(2.5rem, 5.5vw, 5rem);
+  color: var(--white);
+  line-height: 1.05;
+  margin-bottom: var(--space-xs);
+}
+
+.thinker-subtitle {
+  font-size: 1.1rem;
+  color: var(--gray-300);
+  line-height: 1.6;
+}
+
+.thinker-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+.thinker-canvas-wrapper {
+  position: relative;
+  width: 100%;
+  height: clamp(380px, 55vh, 520px);
+  background-color: var(--black-soft);
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.canvas-stage-badge {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--blue-light);
+  background-color: rgba(5, 6, 8, 0.88);
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--border-subtle);
+}
+
+.thinker-stages-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.stage-card {
+  background-color: var(--black-soft);
+  border: 1px solid var(--border-subtle);
+  padding: 1.25rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+}
+
+.stage-card:hover {
+  border-color: var(--border-strong);
+  transform: translateX(4px);
+}
+
+.stage-card.is-active {
+  border-color: var(--blue);
+  background-color: var(--blue-deep);
+}
+
+.stage-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.stage-index {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--gray-600);
+}
+
+.stage-card.is-active .stage-index {
+  color: var(--blue-light);
+}
+
+.stage-name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--white);
+}
+
+.stage-question {
+  font-size: 1.05rem;
+  color: var(--white);
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.stage-desc {
+  font-size: 0.95rem;
+  color: var(--gray-100);
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .thinker-grid {
+    grid-template-columns: 1fr;
+  }
+}

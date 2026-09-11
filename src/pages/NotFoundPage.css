@@ -1,0 +1,56 @@
+﻿.not-found-page {
+  background-color: var(--bg-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.not-found-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 10rem;
+  padding-bottom: 6rem;
+}
+
+.nf-code {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  color: var(--accent-warm);
+  margin-bottom: var(--space-xs);
+}
+
+.nf-title {
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.05;
+  max-width: 900px;
+  margin-bottom: var(--space-xs);
+}
+
+.nf-desc {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-md);
+}
+
+.nf-home-btn {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  color: var(--bg-primary);
+  background-color: var(--accent-warm);
+  padding: 0.85rem 1.75rem;
+  border-radius: 2px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: opacity 0.2s ease;
+}
+
+.nf-home-btn:hover {
+  opacity: 0.9;
+}

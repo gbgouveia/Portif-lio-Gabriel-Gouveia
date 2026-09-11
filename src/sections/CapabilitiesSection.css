@@ -1,0 +1,128 @@
+﻿.capabilities-section {
+  background-color: var(--black-soft);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.capabilities-header {
+  margin-bottom: var(--space-md);
+}
+
+.capabilities-title {
+  font-size: clamp(2.5rem, 5.5vw, 5rem);
+  color: var(--white);
+  line-height: 1.05;
+}
+
+.capabilities-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.cap-tab-btn {
+  background-color: var(--black);
+  border: 1px solid var(--border-subtle);
+  padding: 1.25rem 1rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.cap-tab-btn:hover {
+  border-color: var(--border-strong);
+}
+
+.cap-tab-btn.is-active {
+  background-color: var(--blue-deep);
+  border-color: var(--blue);
+}
+
+.tab-num {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--gray-600);
+}
+
+.cap-tab-btn.is-active .tab-num {
+  color: var(--blue-light);
+}
+
+.tab-name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.capabilities-content-card {
+  background-color: var(--black);
+  border: 1px solid var(--border-subtle);
+  padding: 2rem;
+  border-radius: 4px;
+}
+
+.card-top {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 1rem;
+}
+
+.card-cat-name {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: var(--blue-light);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.card-cat-desc {
+  font-size: 1.05rem;
+  color: var(--gray-300);
+}
+
+.skills-pills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.skill-pill-card {
+  background-color: var(--black-soft);
+  border: 1px solid var(--border-subtle);
+  padding: 0.85rem 1.1rem;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.skill-pill-card:hover {
+  border-color: var(--blue);
+  transform: translateY(-2px);
+}
+
+.skill-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--blue);
+  border-radius: 50%;
+}
+
+.skill-pill-name {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--white);
+}
+
+@media (max-width: 900px) {
+  .capabilities-tabs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

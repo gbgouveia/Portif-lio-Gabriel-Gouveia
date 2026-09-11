@@ -1,0 +1,225 @@
+﻿.project-page {
+  background-color: var(--bg-primary);
+  min-height: 100vh;
+}
+
+.project-hero {
+  border-bottom: 1px solid var(--border-subtle);
+  padding-top: 8rem;
+}
+
+.back-to-work-btn {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  display: inline-block;
+  margin-bottom: var(--space-md);
+  transition: color 0.2s ease;
+}
+
+.back-to-work-btn:hover {
+  color: var(--text-primary);
+}
+
+.project-hero-meta {
+  display: flex;
+  gap: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--accent-warm);
+  margin-bottom: var(--space-xs);
+}
+
+.project-title {
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 0.95;
+  margin-bottom: var(--space-sm);
+}
+
+.project-tagline {
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  color: var(--text-secondary);
+  max-width: 800px;
+}
+
+.project-body-section {
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
+}
+
+.project-block {
+  margin-bottom: var(--space-xl);
+  border-top: 1px solid var(--border-subtle);
+  padding-top: var(--space-md);
+}
+
+.block-title {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  color: var(--accent-warm);
+  margin-bottom: var(--space-sm);
+}
+
+.block-lead {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+  color: var(--text-primary);
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.block-text {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.architecture-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.arch-node {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  padding: 1.25rem;
+  border-radius: 4px;
+}
+
+.arch-num {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent-warm);
+}
+
+.arch-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.arch-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.challenges-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.challenge-card,
+.solution-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  padding: 1.5rem;
+  border-radius: 4px;
+}
+
+.challenge-card h3 {
+  font-size: 1rem;
+  color: #ef4444;
+  margin-bottom: 0.5rem;
+}
+
+.solution-card h3 {
+  font-size: 1rem;
+  color: #22c55e;
+  margin-bottom: 0.5rem;
+}
+
+.result-highlight {
+  color: var(--accent-warm);
+}
+
+.case-quote-box {
+  margin-top: 1.5rem;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--accent-warm);
+}
+
+.case-quote {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--text-primary);
+}
+
+.project-stack-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.p-stack-tag {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  background-color: var(--bg-secondary);
+  padding: 0.4rem 0.85rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+}
+
+.next-project-section {
+  border-top: 1px solid var(--border-subtle);
+  background-color: var(--bg-secondary);
+  padding: var(--space-xl) 0;
+}
+
+.next-label {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.next-project-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+}
+
+.next-title {
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.next-arrow {
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  color: var(--accent-warm);
+  transition: transform 0.3s ease;
+}
+
+.next-project-link:hover .next-title {
+  color: var(--accent-warm);
+  transform: translateX(12px);
+}
+
+.next-project-link:hover .next-arrow {
+  transform: translateX(16px);
+}
+
+@media (max-width: 768px) {
+  .challenges-grid {
+    grid-template-columns: 1fr;
+  }
+}
