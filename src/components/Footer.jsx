@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import './Footer.css';
 
 export const Footer = () => {
@@ -17,13 +17,13 @@ export const Footer = () => {
         <div className="footer-links">
           <div className="footer-col">
             <span className="footer-col-title">CONNECT</span>
-            <a href="https://github.com/gabrielgouveia" target="_blank" rel="noopener noreferrer" className="footer-link" data-cursor="HOVER">
+            <a href="https://github.com/gbgouveia" target="_blank" rel="noopener noreferrer" className="footer-link" data-cursor="HOVER">
               GITHUB ↗
             </a>
-            <a href="https://linkedin.com/in/gabrielgouveia" target="_blank" rel="noopener noreferrer" className="footer-link" data-cursor="HOVER">
+            <a href="https://www.linkedin.com/in/gabriel-gouveia-de-paula-599a01384" target="_blank" rel="noopener noreferrer" className="footer-link" data-cursor="HOVER">
               LINKEDIN ↗
             </a>
-            <a href="mailto:gabriel@gouveia.dev" className="footer-link" data-cursor="HOVER">
+            <a href="mailto:gb.gouveia.ps@gmail.com" className="footer-link" data-cursor="HOVER">
               EMAIL ↗
             </a>
           </div>

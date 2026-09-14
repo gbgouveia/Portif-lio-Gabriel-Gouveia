@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import './EducationCertificatesSection.css';
 import { Award, GraduationCap, Calendar, Building2, Eye, X, CheckCircle2 } from 'lucide-react';
 
@@ -61,8 +61,7 @@ export const EducationCertificatesSection = () => {
         <div className="education-block">
           <header className="section-editorial-header">
             <div className="section-tag">
-              <span className="section-tag-dot" />
-              <span>TRAJETÓRIA ACADÊMICA</span>
+              <span>FORMAÇÃO ACADÊMICA</span>
             </div>
             <h2 className="section-main-title">FORMAÇÃO</h2>
           </header>
@@ -98,8 +97,7 @@ export const EducationCertificatesSection = () => {
         <div className="certificates-block" id="certificados">
           <header className="section-editorial-header">
             <div className="section-tag">
-              <span className="section-tag-dot" />
-              <span>RECONHECIMENTO & QUALIFICAÇÕES</span>
+              <span>CERTIFICAÇÕES TÉCNICAS</span>
             </div>
             <h2 className="section-main-title">CERTIFICADOS</h2>
           </header>
@@ -130,7 +128,7 @@ export const EducationCertificatesSection = () => {
                 </div>
 
                 <div className="cert-action-bar">
-                  <span>VISUALIZAR CERTIFICADO</span>
+                  <span>VER DETALHES</span>
                   <Eye size={16} />
                 </div>
               </article>
@@ -150,7 +148,7 @@ export const EducationCertificatesSection = () => {
             <div className="cert-modal-header">
               <div className="cert-modal-badge">
                 <Award size={20} />
-                <span>CERTIFICADO VERIFICADO</span>
+                <span>CERTIFICADO</span>
               </div>
               <h3 className="cert-modal-title">{selectedCert.name}</h3>
               <p className="cert-modal-institution">{selectedCert.institution} · {selectedCert.year}</p>
@@ -172,9 +170,9 @@ export const EducationCertificatesSection = () => {
                   <span className="detail-value">{selectedCert.area}</span>
                 </div>
                 <div className="cert-detail-item">
-                  <span className="detail-label">STATUS DE EMISSÃO</span>
+                  <span className="detail-label">INSTITUIÇÃO</span>
                   <span className="detail-value status-valid">
-                    <CheckCircle2 size={14} /> VALIDADE TÉCNICA ATIVA
+                    <CheckCircle2 size={14} /> {selectedCert.institution}
                   </span>
                 </div>
               </div>

@@ -62,14 +62,14 @@ export const ProgrammingSection = () => {
       <div className="container">
         <div className="section-meta-tag">
           <span className="tag-line" />
-          <span>02 // ECOSSISTEMA TECNOLÓGICO</span>
+          <span>TECNOLOGIAS & STACK</span>
         </div>
 
         {/* Section Headline */}
         <div className="programming-header">
-          <h2 className="programming-main-title">O QUE EU MEXO</h2>
+          <h2 className="programming-main-title">FERRAMENTAS & ENGENHARIA</h2>
           <p className="programming-lead">
-            Tecnologias, linguagens e ferramentas que utilizo no desenvolvimento de sistemas, além de frentes em constante estudo e exploração.
+            Tecnologias e linguagens aplicadas no desenvolvimento de sistemas web, APIs RESTful, persistência e infraestrutura.
           </p>
         </div>
 

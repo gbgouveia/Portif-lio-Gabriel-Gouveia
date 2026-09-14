@@ -1,243 +1,158 @@
-﻿import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './PhotographySection.css';
-import { ImgSphere } from '../components/ui/img-sphere';
-import { X, ChevronLeft, ChevronRight, Camera, Film, Eye, Sparkles } from 'lucide-react';
+import SphereImageGrid from '../components/ui/img-sphere';
 
-const PHOTO_ITEMS = [
+const PORTFOLIO_PHOTOGRAPHY = [
   {
-    id: 'p1',
-    title: 'LUZ & SOMBRA — RETRATO MASCULINO',
+    id: 'photo-1',
+    title: 'Luz & Sombra — Retrato Masculino',
     category: 'RETRATOS',
-    number: '01',
+    src: '/photos/retrato-01.jpg',
     url: '/photos/retrato-01.jpg',
-    aspect: 'vertical',
     description: 'Ensaio editorial focado em luz natural direcionada, contraste dramático e expressão autêntica.'
   },
   {
-    id: 'p2',
-    title: 'LUSCO-FUSCO NO LITORAL',
+    id: 'photo-2',
+    title: 'Lusco-Fusco no Litoral',
     category: 'CASAIS',
-    number: '02',
+    src: '/photos/casal-01.jpg',
     url: '/photos/casal-01.jpg',
-    aspect: 'horizontal',
     description: 'Conexão espontânea ao entardecer, capturando movimento, afeto e a luz quente do sol poente.'
   },
   {
-    id: 'p3',
-    title: 'CELEBRAÇÃO & BRINDE',
+    id: 'photo-3',
+    title: 'Celebração & Brinde',
     category: 'EVENTOS',
-    number: '04',
+    src: '/photos/evento-01.jpg',
     url: '/photos/evento-01.jpg',
-    aspect: 'vertical',
-    description: 'Cobertura documental de evento corporativo e social com atmosfera calorosa e iluminação cênica.'
+    description: 'Cobertura documental de evento social com atmosfera calorosa e iluminação cênica.'
   },
   {
-    id: 'p4',
-    title: 'DIREÇÃO AUDIOVISUAL & FILMMAKING',
+    id: 'photo-4',
+    title: 'Direção Audiovisual & Cinema',
     category: 'FILMMAKING',
-    number: '08',
+    src: '/photos/filmmaking-01.jpg',
     url: '/photos/filmmaking-01.jpg',
-    aspect: 'wide',
-    description: 'Produção audiovisual, enquadramento de cinema, rigging de câmera e composição visual para marcas e projetos.'
+    description: 'Produção audiovisual, enquadramento cinematográfico e composição visual para marcas.'
+  },
+  {
+    id: 'photo-5',
+    title: 'Ensaio Editorial 15 Anos',
+    category: '15 ANOS',
+    src: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80',
+    description: 'Retrato de celebração de 15 anos com atmosfera delicada e elegante.'
+  },
+  {
+    id: 'photo-6',
+    title: 'Cerimônia ao Ar Livre',
+    category: 'CASAMENTOS',
+    src: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80',
+    description: 'Registro emocionante da troca de votos em luz natural ao ar livre.'
+  },
+  {
+    id: 'photo-7',
+    title: 'Risos Espontâneos',
+    category: 'MOMENTOS ESPONTÂNEOS',
+    src: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80',
+    description: 'Captura documental de alegrias genuínas e momentos não ensaiados.'
+  },
+  {
+    id: 'photo-8',
+    title: 'Textura & Detalhes',
+    category: 'DETALHES',
+    src: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80',
+    description: 'Composição minimalista atenta às texturas e elementos do ambiente.'
+  },
+  {
+    id: 'photo-9',
+    title: 'Estudo de Luz — Retrato Autoral',
+    category: 'FOTOGRAFIA AUTORAL',
+    src: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80',
+    description: 'Fotografia autoral explorando volumetria e chiaroscuro.'
+  },
+  {
+    id: 'photo-10',
+    title: 'Abraço ao Entardecer',
+    category: 'CASAIS',
+    src: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=600&q=80',
+    description: 'Ensaio pré-wedding registrando carinho e intimidade sob a luz dourada.'
+  },
+  {
+    id: 'photo-11',
+    title: 'Recepção de Gala',
+    category: 'EVENTOS',
+    src: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80',
+    description: 'Iluminação cênica e energia pulsante em grande evento social.'
+  },
+  {
+    id: 'photo-12',
+    title: 'Conexão & Afeto',
+    category: 'FAMÍLIA',
+    src: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=600&q=80',
+    description: 'Conexão e afeto entre gerações reunidas em momento especial.'
   }
 ];
 
-const CATEGORIES = [
-  'TODAS',
-  'RETRATOS',
-  'CASAIS',
-  'FAMÍLIA',
-  'EVENTOS',
-  '15 ANOS',
-  'FORMATURAS',
-  'INFANTIL'
-];
+const SPHERE_ITEMS = Array.from({ length: 48 }, (_, i) => {
+  const base = PORTFOLIO_PHOTOGRAPHY[i % PORTFOLIO_PHOTOGRAPHY.length];
+  return {
+    ...base,
+    id: `sphere-photo-${i + 1}`
+  };
+});
 
 export const PhotographySection = () => {
-  const [selectedCategory, setSelectedCategory] = useState('TODAS');
-  const [lightboxIndex, setLightboxIndex] = useState(null);
+  const [sphereConfig, setSphereConfig] = useState({
+    containerSize: 700,
+    sphereRadius: 260
+  });
 
-  const filteredPhotos = selectedCategory === 'TODAS'
-    ? PHOTO_ITEMS
-    : PHOTO_ITEMS.filter((item) => item.category === selectedCategory);
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width < 640) {
+        // Mobile: 320–380px container
+        const size = Math.min(360, Math.max(320, width - 32));
+        setSphereConfig({
+          containerSize: size,
+          sphereRadius: Math.round(size * 0.41)
+        });
+      } else if (width < 1024) {
+        // Tablet: 500–600px container
+        setSphereConfig({
+          containerSize: 550,
+          sphereRadius: 215
+        });
+      } else {
+        // Desktop: 600–750px container
+        setSphereConfig({
+          containerSize: 720,
+          sphereRadius: 275
+        });
+      }
+    };
 
-  const openLightbox = (index) => {
-    setLightboxIndex(index);
-  };
-
-  const closeLightbox = () => {
-    setLightboxIndex(null);
-  };
-
-  const nextPhoto = () => {
-    if (lightboxIndex === null) return;
-    setLightboxIndex((lightboxIndex + 1) % filteredPhotos.length);
-  };
-
-  const prevPhoto = () => {
-    if (lightboxIndex === null) return;
-    setLightboxIndex((lightboxIndex - 1 + filteredPhotos.length) % filteredPhotos.length);
-  };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
-    <section className="photography-section" id="fotografia">
-      {/* Terracotta Visual Shift Header */}
-      <div className="photography-brand-banner">
-        <div className="photography-banner-content">
-          <span className="banner-editorial-tag">LARGURA DE BANDA VISUAL</span>
-          <h2 className="banner-editorial-words">
-            <span>LUZ</span> · <span>PESSOAS</span> · <span>MOMENTOS</span> · <span>HISTÓRIAS</span>
-          </h2>
-        </div>
+    <section className="photography-sphere-section" id="fotografia">
+      <div className="photography-sphere-wrapper">
+        <SphereImageGrid
+          items={SPHERE_ITEMS}
+          containerSize={sphereConfig.containerSize}
+          radius={sphereConfig.sphereRadius}
+          autoRotate={true}
+          autoRotateSpeed={0.2}
+          dragSensitivity={0.85}
+          momentumDecay={0.96}
+        />
       </div>
-
-      <div className="photography-container">
-        {/* Editorial Section Header */}
-        <header className="photography-header">
-          <div className="photography-tag">
-            <span className="photography-tag-dot" />
-            <span>EXPRESSÃO VISUAL & AUDIOVISUAL</span>
-          </div>
-          <h2 className="photography-title">FOTOGRAFIA</h2>
-          <p className="photography-subtitle">
-            A fotografia e o audiovisual não são atividades desconectadas da tecnologia. São formas paralelas de criar narrativa, controlar composição e capturar a verdade das pessoas.
-          </p>
-        </header>
-
-        {/* 3D Photography Sphere */}
-        <div className="sphere-wrapper-block">
-          <div className="sphere-block-header">
-            <span className="sphere-block-title">ESFERA FOTOGRÁFICA INTERATIVA</span>
-            <span className="sphere-block-sub">3D COMPOSITION — ARRASTE PARA EXPLORAR</span>
-          </div>
-          <ImgSphere
-            items={PHOTO_ITEMS}
-            radius={210}
-            onSelectPhoto={(photo) => {
-              const idx = filteredPhotos.findIndex((p) => p.id === photo.id);
-              if (idx !== -1) openLightbox(idx);
-            }}
-          />
-        </div>
-
-        {/* Editorial Gallery Category Filter */}
-        <div className="gallery-filter-bar">
-          <span className="filter-label">CATEGORIAS:</span>
-          <div className="filter-buttons">
-            {CATEGORIES.map((cat) => (
-              <button
-                key={cat}
-                className={`filter-btn ${selectedCategory === cat ? 'is-active' : ''}`}
-                onClick={() => setSelectedCategory(cat)}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Editorial Asymmetric Gallery Grid */}
-        <div className="editorial-gallery-grid">
-          {filteredPhotos.map((photo, index) => (
-            <div
-              key={photo.id}
-              className={`gallery-editorial-item aspect-${photo.aspect}`}
-              onClick={() => openLightbox(index)}
-            >
-              <div className="gallery-img-wrapper">
-                <img src={photo.url} alt={photo.title} className="gallery-img" />
-                <div className="gallery-overlay">
-                  <div className="gallery-overlay-top">
-                    <span className="gallery-num">{photo.number}</span>
-                    <span className="gallery-cat">{photo.category}</span>
-                  </div>
-                  <div className="gallery-overlay-bottom">
-                    <h3 className="gallery-item-title">{photo.title}</h3>
-                    <span className="gallery-expand-btn">AMPLIAR FOTOGRAFIA →</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Filmmaking & Audiovisual Highlight Bar */}
-        <div className="filmmaking-highlight-box">
-          <div className="filmmaking-content">
-            <div className="filmmaking-icon-group">
-              <Film size={28} className="filmmaking-icon" />
-              <Camera size={28} className="filmmaking-icon" />
-            </div>
-            <div className="filmmaking-text">
-              <h3 className="filmmaking-title">FILMMAKING & DIREÇÃO VISUAL</h3>
-              <p className="filmmaking-desc">
-                Além de ensaios e retratos, Gabriel atua com produção de vídeo, direção de cena, enquadramento cinematográfico, edição e criação de conteúdo audiovisual de alta estética.
-              </p>
-            </div>
-          </div>
-          <div className="filmmaking-tags">
-            <span>Fotografia</span>
-            <span>Filmmaking</span>
-            <span>Direção Visual</span>
-            <span>Edição</span>
-            <span>Conteúdo</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Lightbox Modal View */}
-      {lightboxIndex !== null && (
-        <div className="photography-lightbox-modal" onClick={closeLightbox}>
-          <div className="lightbox-backdrop" />
-
-          <button className="lightbox-close-btn" onClick={closeLightbox} aria-label="Fechar">
-            <X size={28} />
-          </button>
-
-          <button
-            className="lightbox-nav-btn prev-btn"
-            onClick={(e) => {
-              e.stopPropagation();
-              prevPhoto();
-            }}
-            aria-label="Anterior"
-          >
-            <ChevronLeft size={36} />
-          </button>
-
-          <button
-            className="lightbox-nav-btn next-btn"
-            onClick={(e) => {
-              e.stopPropagation();
-              nextPhoto();
-            }}
-            aria-label="Próxima"
-          >
-            <ChevronRight size={36} />
-          </button>
-
-          <div className="lightbox-content-card" onClick={(e) => e.stopPropagation()}>
-            <div className="lightbox-media-wrapper">
-              <img
-                src={filteredPhotos[lightboxIndex].url}
-                alt={filteredPhotos[lightboxIndex].title}
-                className="lightbox-image"
-              />
-            </div>
-            <div className="lightbox-info-bar">
-              <div>
-                <span className="lightbox-category-tag">
-                  {filteredPhotos[lightboxIndex].category}
-                </span>
-                <h3 className="lightbox-title">{filteredPhotos[lightboxIndex].title}</h3>
-              </div>
-              <p className="lightbox-description">
-                {filteredPhotos[lightboxIndex].description}
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 };
+
+export default PhotographySection;
+

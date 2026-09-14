@@ -1,4 +1,4 @@
-﻿.about-editorial-section {
+.about-editorial-section {
   position: relative;
   width: 100%;
   padding: 7rem 0;
@@ -92,9 +92,17 @@
 }
 
 .stat-label {
+  font-family: var(--font-hero, 'Rubik', sans-serif);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #4BF2F2;
+}
+
+.stat-detail {
   font-family: var(--font-mono, monospace);
-  font-size: 0.68rem;
-  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
   color: rgba(244, 236, 231, 0.6);
 }
 

@@ -1,77 +1,77 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import './ProjectsSection.css';
-import { ExternalLink, Github, ChevronRight, Layers, ShieldCheck, Ticket, Bell, Utensils } from 'lucide-react';
+import { ExternalLink, Github, ChevronRight, Utensils, FileText, DollarSign, ShoppingBag, Heart } from 'lucide-react';
 
 const PROJECTS_DATA = [
   {
-    id: 'paprica',
+    id: 'lanches-escolares',
     number: '01',
-    title: 'PÁPRICA',
-    category: 'E-COMMERCE FULL-STACK',
-    year: '2025',
-    icon: Layers,
-    problem: 'Sistemas de e-commerce convencionais sofrem com desacoplamento entre estoque, gateway de pagamento e concorrência transacional no checkout.',
-    construction: 'Desenvolvi a plataforma do zero utilizando Flask e PostgreSQL com suporte a webhooks assíncronos do Stripe. A arquitetura implementa controle estrito de sessão via Flask-Login e isolamento transacional para evitar falhas durante altas demandas de compra.',
-    stack: ['Python', 'Flask', 'PostgreSQL', 'Flask-Login', 'Stripe', 'Render'],
-    result: 'Aplicação transacional estável com tempo de resposta sub-segundo, fluxo de checkout seguro idempotente e painel administrativo integrado.',
-    github: 'https://github.com/gabrielgouveia',
-    demo: '#'
-  },
-  {
-    id: 'notifyflow',
-    number: '02',
-    title: 'NOTIFYFLOW',
-    category: 'SISTEMAS DISTRIBUÍDOS & MENSAGERIA',
-    year: '2024',
-    icon: Bell,
-    problem: 'O envio síncrono de notificações de alta prioridade gerava gargalos severos de requisição na API principal, travando a experiência dos usuários.',
-    construction: 'Projetei e containerizei com Docker uma arquitetura desacoplada baseada em RabbitMQ e workers assíncronos Celery. O sistema roteia payloads através de trocas AMQP com política de dead-letter exchange e retries exponenciais.',
-    stack: ['Django REST Framework', 'RabbitMQ', 'Celery', 'Docker', 'Redis'],
-    result: 'Vazão contínua de disparo de eventos assíncronos em escala sem impacto no tempo de resposta do backend principal.',
-    github: 'https://github.com/gabrielgouveia',
-    demo: '#'
-  },
-  {
-    id: 'merenda-escolar',
-    number: '03',
-    title: 'SISTEMA DE MERENDA ESCOLAR',
-    category: 'GESTÃO ESCOLAR & QR CODE',
-    year: '2025',
+    title: 'CONTROLE DE LANCHES ESCOLARES',
+    category: 'GESTÃO ESCOLAR & FIREBASE',
+    year: '2026',
     icon: Utensils,
-    problem: 'Filas extensas no refeitório, desperdício de tempo letivo, falta de visibilidade prévia do cardápio e extrema dificuldade da coordenação para controlar o limite diário de refeições por aluno.',
-    construction: 'Construí um sistema completo de gestão de merenda dividida por níveis de acesso (Alunos, Professores, Coordenação e Administração). Os alunos recebem tokens dinâmicos com QR Code no celular para validação rápida na fila de retirada, permitindo ao gerenciador acompanhar o estoque de insumos e refeições servidas em um dashboard em tempo real.',
-    stack: ['Python', 'Django', 'Django REST Framework', 'PostgreSQL', 'QR Code API', 'Dashboard Analytics'],
-    result: 'Redução expressiva do tempo de espera na fila, eliminação total do uso de fichas de papel e controle analítico em tempo real da distribuição nutricional escolar.',
-    github: 'https://github.com/gabrielgouveia',
-    demo: '#'
+    problem: 'Escolas precisam gerenciar a retirada diária de lanches por diferentes perfis de usuário (aluno, professor, coordenação, refeitório), cada um com permissões e fluxos distintos, sem controle manual em papel.',
+    construction: 'Desenvolvi um sistema completo com React 18 + TypeScript + Vite, autenticação via Firebase Authentication com persistência de sessão e role claims, banco de dados Cloud Firestore com Security Rules para RBAC, validação de retirada via QR Code SVG + leitor html5-qrcode, e módulo de reconhecimento facial.',
+    stack: ['React', 'TypeScript', 'Vite', 'Firebase Auth', 'Cloud Firestore', 'QR Code', 'Vitest', 'Cypress E2E'],
+    result: 'Sistema funcional com cinco níveis de acesso, validação presencial por QR Code e testes automatizados cobrindo fluxo ponta a ponta.',
+    github: 'https://github.com/gbgouveia/site-paulo-freire-compelto',
+    demo: null
   },
   {
-    id: 'safeaccess',
+    id: 'poliscon',
+    number: '02',
+    title: 'PROPOSTA COMERCIAL — POLISCON',
+    category: 'LANDING PAGE & ANIMAÇÃO',
+    year: '2026',
+    icon: FileText,
+    problem: 'A Poliscon precisava de uma página de apresentação comercial para o Dashboard Inteligente e o assistente virtual Richard IA, com visual de software de alto padrão e interatividade marcante.',
+    construction: 'Criei uma landing page com React 19 + Vite, animações combinando GSAP (efeitos magnéticos e paralaxe 3D) e Framer Motion, rolagem suave com Lenis, glassmorphism e gradientes dinâmicos via CSS customizado, e efeito de confetti com Canvas ao aprovar a proposta.',
+    stack: ['React', 'Vite', 'GSAP', 'Framer Motion', 'Lenis', 'CSS Custom', 'gh-pages'],
+    result: 'Página publicada no GitHub Pages com animações fluidas, paralaxe 3D e efeito de celebração interativo.',
+    github: 'https://github.com/gbgouveia/proposta-comercial-poliscon',
+    demo: 'https://gbgouveia.github.io/proposta-comercial-poliscon/'
+  },
+  {
+    id: 'flow-finance',
+    number: '03',
+    title: 'FLOW FINANCE',
+    category: 'FINANÇAS PESSOAIS & REACT',
+    year: '2026',
+    icon: DollarSign,
+    problem: 'Controlar receitas, despesas e fluxo de caixa pessoal de forma prática, sem depender de planilhas avulsas ou aplicativos fechados.',
+    construction: 'Aplicação React + Vite organizada em componentes, páginas, contexts (estado global), services (lógica de negócio isolada) e utils — arquitetura modular preparada para escalar com novas funcionalidades.',
+    stack: ['React', 'Vite', 'JavaScript', 'Context API'],
+    result: 'Interface funcional para registro e visualização de movimentações financeiras com separação clara entre lógica, apresentação e estado.',
+    github: 'https://github.com/gbgouveia/Flow_Finance',
+    demo: null
+  },
+  {
+    id: 'leves-para-servir',
     number: '04',
-    title: 'SAFEACCESS',
-    category: 'SEGURANÇA & AUDITORIA DE SISTEMAS',
-    year: '2025',
-    icon: ShieldCheck,
-    problem: 'Ambientes corporativos necessitam de restrição rigorosa de privilégios e registro imutável de acessos para conformidade e auditoria técnica.',
-    construction: 'Desenvolvi um middleware de autorização baseado em papéis (RBAC) integrado a um mecanismo de log imutável de eventos e geração automática de relatórios em PDF com integridade relacional.',
-    stack: ['Python', 'Flask', 'RBAC Security', 'Audit Trail', 'PDF Engine', 'PostgreSQL'],
-    result: 'Módulo de segurança corporativo pronto para auditorias, garantindo validações de permissão sem adicionar latência perceptível.',
-    github: 'https://github.com/gabrielgouveia',
-    demo: '#'
+    title: 'LEVES PARA SERVIR',
+    category: 'E-COMMERCE & PWA',
+    year: '2026',
+    icon: ShoppingBag,
+    problem: 'Negócio de alimentação precisava de presença digital com catálogo de produtos, página de contato e funcionamento offline para clientes com conexão instável.',
+    construction: 'Construí um site multi-página (HTML + CSS + JS) integrado ao Firebase Hosting, com Firestore para dados dinâmicos, Service Worker para cache offline e manifest.json configurado para instalação como PWA. Inclui SEO com sitemap.xml e robots.txt.',
+    stack: ['HTML', 'CSS', 'JavaScript', 'Firebase Hosting', 'Firestore', 'PWA', 'Service Worker'],
+    result: 'Site publicado com instalação nativa no celular, acesso offline às páginas e catálogo de produtos com navegação completa.',
+    github: 'https://github.com/gbgouveia/Leves_Para_Servir',
+    demo: null
   },
   {
-    id: 'chamados',
+    id: 'convite-ester',
     number: '05',
-    title: 'SISTEMA DE CHAMADOS',
-    category: 'API REST & GESTÃO DE TICKETS',
-    year: '2024',
-    icon: Ticket,
-    problem: 'Atendimentos técnicos estagnados devido à falta de priorização padronizada, SLA indefinido e ausência de histórico estruturado por chamado.',
-    construction: 'Construí uma API RESTful completa com Django REST Framework, autenticação JWT e serializadores customizados para rastrear o ciclo de vida dos chamados desde a abertura até a resolução.',
-    stack: ['Django', 'Django REST Framework', 'PostgreSQL', 'JWT Auth'],
-    result: 'Controle centralizado dos prazos de atendimento (SLA), histórico automatizado de interações e métricas claras para suporte.',
-    github: 'https://github.com/gabrielgouveia',
-    demo: '#'
+    title: 'CONVITE DIGITAL — ESTER',
+    category: 'CONVITE INTERATIVO & WEB',
+    year: '2026',
+    icon: Heart,
+    problem: 'Criar um convite digital personalizado e interativo para substituir convites impressos, com experiência visual marcante acessível por link.',
+    construction: 'Desenvolvi uma aplicação JavaScript com deploy via GitHub Pages, focada em composição visual e interatividade para o destinatário.',
+    stack: ['JavaScript', 'HTML', 'CSS', 'GitHub Pages'],
+    result: 'Convite funcional acessível por URL, publicado no GitHub Pages e compartilhável diretamente por link.',
+    github: 'https://github.com/gbgouveia/Convite_Ester',
+    demo: null
   }
 ];
 
@@ -84,12 +84,11 @@ export const ProjectsSection = () => {
         {/* Editorial Section Header */}
         <header className="projects-header">
           <div className="projects-tag">
-            <span className="projects-tag-dot" />
-            <span>DESENVOLVIMENTO DE SISTEMAS</span>
+            <span>PROJETOS EM DESTAQUE</span>
           </div>
           <h2 className="projects-title">PROJETOS</h2>
           <p className="projects-subtitle">
-            Soluções reais construídas com arquitetura limpa, foco em problemas concretos e código sustentável.
+            Sistemas desenvolvidos com foco em arquitetura desacoplada, modelo de dados consistente e solução de problemas reais.
           </p>
         </header>
 
@@ -170,6 +169,17 @@ export const ProjectsSection = () => {
                       <Github size={18} />
                       <span>CÓDIGO NO GITHUB</span>
                     </a>
+                    {current.demo && (
+                      <a
+                        href={current.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-btn project-btn-secondary"
+                      >
+                        <ExternalLink size={18} />
+                        <span>VER DEMO</span>
+                      </a>
+                    )}
                   </div>
                 </article>
               );

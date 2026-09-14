@@ -1,31 +1,31 @@
-﻿import React from 'react';
+import React from 'react';
 import './ProcessSection.css';
 
 const PROCESS_STEPS = [
   {
     step: '01',
-    title: 'ENTENDO',
-    description: 'Análise aprofundada do problema de negócio, requisitos do usuário, limites de infraestrutura e definição clara do resultado esperado antes de escrever a primeira linha de código.'
+    title: 'COMPREENSÃO DO PROBLEMA',
+    description: 'Análise detalhada de requisitos, regras de negócio, restrições técnicas e definição clara do objetivo antes do desenvolvimento.'
   },
   {
     step: '02',
-    title: 'ESTRUTURO',
-    description: 'Modelagem de dados relacional/não-relacional, arquitetura de rotas, definição de contratos de APIs, escolhas de stack e planejamento do fluxo de informação.'
+    title: 'ARQUITETURA & DADOS',
+    description: 'Modelagem relacional de dados, estruturação de rotas REST, definição do contrato de APIs e planejamento de infraestrutura.'
   },
   {
     step: '03',
-    title: 'DESENVOLVO',
-    description: 'Construção modular com código limpo, aplicação de boas práticas de POO/funcional, controle de versão rigoroso e componentes desacoplados de alta manutenibilidade.'
+    title: 'IMPLEMENTAÇÃO',
+    description: 'Desenvolvimento modular em Python e JavaScript com código limpo, controle de versão e desacoplamento de componentes.'
   },
   {
     step: '04',
-    title: 'TESTO',
-    description: 'Validação rigorosa de casos de borda, testes funcionais, verificação de concorrência transacional, segurança de rotas e auditoria de resposta de requisições.'
+    title: 'VALIDAÇÃO & TESTES',
+    description: 'Verificação de casos de borda, validação de rotas, integridade de dados e auditoria de desempenho de requisições.'
   },
   {
     step: '05',
-    title: 'EVOLUO',
-    description: 'Monitoramento de métricas operacionais, refatoração orientada a dados, otimização de consultas e evolução contínua da experiência do usuário.'
+    title: 'IMPLANTAÇÃO & MANUTENÇÃO',
+    description: 'Publicação do sistema, monitoramento de logs, otimização de consultas SQL e suporte contínuo.'
   }
 ];
 
@@ -35,12 +35,11 @@ export const ProcessSection = () => {
       <div className="process-container">
         <header className="process-header">
           <div className="process-tag">
-            <span className="process-tag-dot" />
-            <span>METODOLOGIA & METICULOIDADE</span>
+            <span>MÉTODO DE TRABALHO</span>
           </div>
-          <h2 className="process-title">COMO EU CONSTRUO</h2>
+          <h2 className="process-title">PROCESSO DE DESENVOLVIMENTO</h2>
           <p className="process-subtitle">
-            Desenvolvimento de software não é sobre digitação de sintaxe; é um processo estruturado de engenharia e criação contínua.
+            Etapas seguidas para transformar requisitos e problemas de negócio em software em produção.
           </p>
         </header>
 
@@ -57,3 +56,5 @@ export const ProcessSection = () => {
     </section>
   );
 };
+
+export default ProcessSection;

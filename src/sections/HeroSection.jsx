@@ -1,27 +1,37 @@
-﻿import React from 'react';
-import { motion } from 'framer-motion';
-import { CursorScrubCanvas } from '../components/ui/CursorScrubCanvas';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Github, Linkedin, Mail, Menu, X, ArrowDownRight } from 'lucide-react';
+import CursorScrubCanvas from '../components/ui/CursorScrubCanvas';
 import './HeroSection.css';
 
-export const HeroSection = () => {
-  const scrollToSection = (id) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
-  };
+const NAV_ITEMS = [
+  { label: 'INÍCIO', href: '#hero' },
+  { label: 'PROJETOS', href: '#projetos' },
+  { label: 'SOBRE', href: '#sobre' },
+  { label: 'CONTATO', href: '#contato' },
+];
 
-  // Discreet, elegant reveal animation for author signature & UI elements
-  const revealVariants = {
-    hidden: { opacity: 0, y: 12 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
-    },
+const SOCIAL_LINKS = [
+  { icon: Github, href: 'https://github.com/gbgouveia', label: 'GitHub' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/gabriel-gouveia-de-paula-599a01384', label: 'LinkedIn' },
+  { icon: Mail, href: 'mailto:gb.gouveia.ps@gmail.com', label: 'Email' },
+];
+
+export const HeroSection = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const scrollToSection = (e, href) => {
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const id = href.substring(1);
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
-    <section id="hero" className="hero-fullscreen-section" aria-label="Hero Gabriel Gouveia">
-      {/* 1º & 2º PROTAGONISTA: Fullscreen Canvas 2D WebP Sequence with Centered Character */}
+    <section id="hero" className="editorial-hero-root" aria-label="Hero Gabriel Gouveia">
+      {/* CAMADA 3: Personagem 3D Fullscreen (CursorScrubCanvas) */}
       <CursorScrubCanvas
         frameCount={240}
         axis="horizontal"
@@ -30,84 +40,135 @@ export const HeroSection = () => {
         objectFit="cover"
         backgroundColor="#201D1E"
         enableSubpixelBlending={true}
-        className="hero-video-layer"
+        className="hero-character-layer"
       />
 
-      {/* Layer 2: Ambient Vignette & Grid (Leaves Character Center Unobstructed & Bright) */}
-      <div className="hero-overlay-vignette" />
-      <div className="hero-grid-overlay" />
+      {/* CAMADA 2: Atmosfera Cênica (Vinheta & Grade Sutil) */}
+      <div className="hero-ambient-vignette" />
+      <div className="hero-ambient-grid" />
 
-      {/* Layer 3: Editorial Overlay with Corner Negative Space Signature Layout */}
-      <motion.div
-        className="hero-content-layer"
-        initial="hidden"
-        animate="visible"
-        transition={{ staggerChildren: 0.12, delayChildren: 0.1 }}
-      >
-        {/* Top Minimal Header */}
-        <motion.header className="hero-header-minimal" variants={revealVariants}>
-          <div className="hero-brand">
-            <span className="brand-name">GABRIEL GOUVEIA</span>
-            <span className="brand-dot" />
-          </div>
-
-          <nav className="hero-nav" aria-label="Navegação Principal">
-            <button onClick={() => scrollToSection('about')} className="nav-item">
-              <span className="nav-num">01</span>
-              <span>SOBRE</span>
-            </button>
-            <button onClick={() => scrollToSection('projects')} className="nav-item">
-              <span className="nav-num">02</span>
-              <span>PROJETOS</span>
-            </button>
-            <button onClick={() => scrollToSection('photography')} className="nav-item">
-              <span className="nav-num">03</span>
-              <span>FOTOGRAFIA</span>
-            </button>
-            <button onClick={() => scrollToSection('contact')} className="nav-item">
-              <span className="nav-num">04</span>
-              <span>CONTATO</span>
-            </button>
-          </nav>
-        </motion.header>
-
-        {/* 3º ASSINATURA EDITORIAL EM DUAS LINHAS: Positioned in Left Corner Negative Space */}
-        <div className="hero-aside-layout">
-          <motion.div className="hero-headline-aside" variants={revealVariants}>
-            <h1 className="hero-editorial-signature">
-              <span className="sig-line-1">Gabriel</span>
-              <span className="sig-line-2">Gouveia</span>
-            </h1>
-          </motion.div>
+      {/* CAMADA 5: Navegação Superior Minimalista (Header) */}
+      <header className="hero-top-bar hero-layer-ui">
+        <div className="hero-brand-group">
+          <span className="hero-brand-name">GABRIEL GOUVEIA</span>
+          <span className="hero-brand-sep">•</span>
+          <span className="hero-brand-role">DESENVOLVEDOR</span>
         </div>
 
-        {/* 4º MICROINFORMAÇÃO & INTERACT HINT: Bottom Bar */}
-        <motion.footer className="hero-bottom-bar" variants={revealVariants}>
-          <div className="hero-micro-info">
-            <span className="meta-cyan-badge">PORTFÓLIO</span>
-            <span className="meta-sep">•</span>
-            <span className="meta-location">2026</span>
-          </div>
+        <nav className="hero-desktop-nav" aria-label="Navegação Principal">
+          {NAV_ITEMS.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              onClick={(e) => scrollToSection(e, item.href)}
+              className="hero-nav-link"
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
 
-          <div className="hero-scrub-hint">
-            <div className="hint-arrows">
-              <span>←</span>
-              <span className="hint-line" />
-              <span>→</span>
-            </div>
-            <span className="hint-label">MOVE TO EXPLORE</span>
-          </div>
+        <button
+          className="hero-mobile-toggle"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Menu de Navegação"
+        >
+          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </header>
 
-          <div className="hero-action-box">
-            <button onClick={() => scrollToSection('footer-contact')} className="action-btn">
-              <span>CONTATO</span>
-              <span className="arrow">→</span>
-            </button>
-          </div>
-        </motion.footer>
-      </motion.div>
+      {/* Mobile Drawer Navigation */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -15 }}
+            className="hero-mobile-drawer"
+          >
+            {NAV_ITEMS.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                onClick={(e) => {
+                  scrollToSection(e, item.href);
+                  setMobileMenuOpen(false);
+                }}
+                className="hero-mobile-link"
+              >
+                {item.label}
+              </a>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* CAMADA 4: Textos & Headline Editorial em Espaço Negativo */}
+      <div className="hero-editorial-stage hero-layer-ui">
+        {/* Descrição Profissional & CTA Discreto (Esquerda) */}
+        <motion.div
+          className="hero-desc-block"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <p className="hero-narrative-desc">
+            Desenvolvo experiências digitais que combinam estratégia, tecnologia e direção criativa — do conceito à execução.
+          </p>
+
+          <a
+            href="#projetos"
+            onClick={(e) => scrollToSection(e, '#projetos')}
+            className="hero-discreet-cta"
+          >
+            <span>EXPLORAR PROJETOS</span>
+            <ArrowDownRight size={14} className="cta-icon" />
+          </a>
+        </motion.div>
+
+        {/* Headline Principal (Direita) */}
+        <motion.div
+          className="hero-headline-block"
+          initial={{ opacity: 0, y: 25 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.35 }}
+        >
+          <h1 className="hero-editorial-headline">
+            <span>EU PENSO.</span>
+            <span>DESENVOLVO.</span>
+            <span className="highlight-line">CRIO.</span>
+          </h1>
+        </motion.div>
+      </div>
+
+      {/* CAMADA 6: Microinformações do Rodapé */}
+      <footer className="hero-bottom-bar hero-layer-ui">
+        <div className="hero-social-group">
+          {SOCIAL_LINKS.map((s) => {
+            const Icon = s.icon;
+            return (
+              <a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={s.label}
+                className="hero-social-link"
+              >
+                <Icon size={18} />
+              </a>
+            );
+          })}
+        </div>
+
+        <div className="hero-location-info">
+          <span>BRASÍLIA — DF, BRASIL</span>
+        </div>
+      </footer>
     </section>
   );
 };
 
 export default HeroSection;
+
+

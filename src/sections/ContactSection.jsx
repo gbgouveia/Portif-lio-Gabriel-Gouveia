@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { useI18n } from '../i18n';
 import { Magnetic } from '../components/Magnetic';
 import './ContactSection.css';
@@ -30,13 +30,13 @@ export const ContactSection = () => {
             <p className="contact-subtitle">"{subtitle}"</p>
 
             <div className="contact-social-links">
-              <a href="https://github.com/gabrielgouveia" target="_blank" rel="noopener noreferrer" className="social-link" data-cursor="HOVER">
+              <a href="https://github.com/gbgouveia" target="_blank" rel="noopener noreferrer" className="social-link" data-cursor="HOVER">
                 GITHUB ↗
               </a>
-              <a href="https://linkedin.com/in/gabrielgouveia" target="_blank" rel="noopener noreferrer" className="social-link" data-cursor="HOVER">
+              <a href="https://www.linkedin.com/in/gabriel-gouveia-de-paula-599a01384" target="_blank" rel="noopener noreferrer" className="social-link" data-cursor="HOVER">
                 LINKEDIN ↗
               </a>
-              <a href="mailto:gabriel@gouveia.dev" className="social-link" data-cursor="HOVER">
+              <a href="mailto:gb.gouveia.ps@gmail.com" className="social-link" data-cursor="HOVER">
                 EMAIL ↗
               </a>
             </div>

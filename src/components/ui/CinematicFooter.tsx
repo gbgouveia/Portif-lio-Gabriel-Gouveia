@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { MagneticButton } from './MagneticButton';
 import './CinematicFooter.css';
 
@@ -10,7 +10,7 @@ export const CinematicFooter: React.FC = () => {
   const marqueeText = "DESENVOLVIMENTO ✦ FOTOGRAFIA ✦ FILMMAKING ✦ EXPERIÊNCIAS DIGITAIS ✦ ";
 
   return (
-    <footer id="footer-contact" className="cinematic-footer-root">
+    <footer id="contato" className="cinematic-footer-root">
       {/* Infinite Autoral Marquee Bar */}
       <div className="footer-marquee-container" aria-hidden="true">
         <div className="footer-marquee-track">
@@ -22,31 +22,26 @@ export const CinematicFooter: React.FC = () => {
       {/* Main Footer Container */}
       <div className="footer-container">
         <div className="footer-hero-statement">
-          <span className="statement-tag">// ENCERRAMENTO & CONTATO</span>
-          <h2 className="statement-title">VAMOS CRIAR ALGO?</h2>
+          <span className="statement-tag">CONTATO & REDES</span>
+          <h2 className="statement-title">CONTATO</h2>
           <p className="statement-sub">
-            Sistemas desacoplados, direção visual e narrativas cinematográficas por Gabriel Gouveia.
+            Disponível para desenvolvimento de sistemas, engenharia de software e projetos visuais.
           </p>
         </div>
 
         {/* Magnetic Action Buttons Grid */}
         <div className="footer-magnetic-grid">
-          <MagneticButton onClick={() => window.open('https://github.com', '_blank')}>
+          <MagneticButton onClick={() => window.open('https://github.com/gbgouveia', '_blank')}>
             <span>GITHUB</span>
             <span className="btn-arrow">↗</span>
           </MagneticButton>
 
-          <MagneticButton onClick={() => window.open('https://linkedin.com', '_blank')}>
+          <MagneticButton onClick={() => window.open('https://www.linkedin.com/in/gabriel-gouveia-de-paula-599a01384', '_blank')}>
             <span>LINKEDIN</span>
             <span className="btn-arrow">↗</span>
           </MagneticButton>
 
-          <MagneticButton onClick={() => window.open('https://instagram.com', '_blank')}>
-            <span>INSTAGRAM</span>
-            <span className="btn-arrow">↗</span>
-          </MagneticButton>
-
-          <MagneticButton onClick={() => window.open('mailto:contato@gabrielgouveia.dev', '_self')}>
+          <MagneticButton onClick={() => window.open('mailto:gb.gouveia.ps@gmail.com', '_self')}>
             <span>E-MAIL</span>
             <span className="btn-arrow">✉</span>
           </MagneticButton>
